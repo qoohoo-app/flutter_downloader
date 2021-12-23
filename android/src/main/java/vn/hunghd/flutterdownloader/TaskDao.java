@@ -53,7 +53,7 @@ public class TaskDao {
 
         db.beginTransaction();
         try {
-            db.insertWithOnConflict(TaskContract.TaskEntry.TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_REPLACE);
+            db.insertWithOnConflict(TaskContract.TaskEntry.TABLE_NAME, null, values, SQLiteDatabase.CONFLICT_IGNORE);
             db.setTransactionSuccessful();
         } catch (Exception e) {
             e.printStackTrace();
